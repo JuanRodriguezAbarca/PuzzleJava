@@ -166,7 +166,7 @@ public class Company {
             model = car.getValue().toString();
             modelCode = car.getKey().toString();
             infoLog.info("Current vehicle: " + manufacturerCode + ":" + model);
-            infoLog.info("Current vehicle: " + manufacturerCode + ":" + modelCode);
+            infoLog.info("Current vehicleCode: " + manufacturerCode + ":" + modelCode);
             failBuilder.append(checkRepeatedJasonValues("buildDates", manufacturerCode, model));
         }
         return failBuilder.toString();

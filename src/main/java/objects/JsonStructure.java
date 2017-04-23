@@ -19,7 +19,10 @@ public class JsonStructure {
         this.wkda = wkda;
     }
 
-
+    /**
+     * getters ready for make some tests in order to validate the response.
+     * @return
+     */
     public int getPage() {
         return page;
     }

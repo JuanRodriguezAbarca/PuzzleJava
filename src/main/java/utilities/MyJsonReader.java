@@ -20,6 +20,10 @@ public class MyJsonReader {
 
     final static Logger infoLog = Logger.getLogger("infoLog");
 
+    /**
+     * Here should be an assertion to verify the types of the Json values, and size of the elements. In order to verify the current structure
+     * @return
+     */
     public static PuzzleProperties loadPuzzleProperties(){
         PuzzleProperties puzzleProperties = null;
         String propertiesLocation = System.getProperty("myProperties");
@@ -41,11 +45,5 @@ public class MyJsonReader {
 
         return puzzleProperties;
     }
-
-//    public JsonStructure jsonToJsonStructure(JSONObject restResponse){
-//
-//
-//
-//    }
 
 }

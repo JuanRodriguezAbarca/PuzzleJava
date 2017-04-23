@@ -12,7 +12,7 @@
 
     <properties>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
-        <cucumber-jvm_version>1.2.3</cucumber-jvm_version>
+        <cucumber-jvm_version>1.2.5</cucumber-jvm_version>
         <junit.version>4.11</junit.version>
         <RESTassured_version>2.4.1</RESTassured_version>
         <propertiesFile>${project.basedir}\..\JavaPuzzleParameters.json</propertiesFile>
@@ -82,18 +82,6 @@
             <groupId>com.jayway.restassured</groupId>
             <artifactId>dist-rest-assured</artifactId>
             <version>2.2.0</version>
-        </dependency>
-        <dependency>
-            <groupId>jayway.restassured</groupId>
-            <artifactId>rest-assured</artifactId>
-            <version>${RESTassured_version}</version>
-            <scope>test</scope>
-        </dependency>
-        <dependency>
-            <groupId>jayway.restassured</groupId>
-            <artifactId>spring-mock-mvc</artifactId>
-            <version>${RESTassured_version}</version>
-            <scope>test</scope>
         </dependency>
 
         <!-- Log4J -->
