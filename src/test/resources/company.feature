@@ -9,7 +9,7 @@ Feature: As a customer, I want to select the type of car I want to sell, so that
   Scenario Outline: Testing the different combinations of models and dates for each manufacturer
     Given I choose a manufacturer '<manufacturer>'
     When I select the different vehicles
-    Then I verify there are no duplicated values
+    Then I verify there are no duplicated or null values
 
     Examples: Manufacturers expected
       | manufacturer    |

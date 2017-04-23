@@ -17,7 +17,7 @@ public class DefinitionModel {
 
     static{MyJsonReader.loadPuzzleProperties();}
 
-    protected String errorFault="";
+    protected StringBuilder errorString = new StringBuilder();
     protected boolean flagFail=false;
 
 }

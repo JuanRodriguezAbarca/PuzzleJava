@@ -57,7 +57,7 @@ public class Company {
      * @return
      */
     public String checkRepeatedJasonKeys(String restCall, String manufacturer, String model) {
-        infoLog.info("Comparing keys for " + restCall);
+        infoLog.info("Comparing keys for " + restCall+" for manufacturer: "+manufacturer+" and model: "+model);
         List<String> keyCodes = new ArrayList<>();
         Map<String, String> wkda = getWkdaSets(restCall, manufacturer, model);
         StringBuilder keyCode = new StringBuilder();
@@ -69,6 +69,7 @@ public class Company {
             if (currentCode.contentEquals("") || currentCode == null) {
                 keyCode.append("Manufacturer '" + manufacturer + "' and model '" + model + "'");
                 keyCode.append(entry.getKey().toString());
+                keyCode.append("\n");
                 errorLog.error("Manufacturer '" + manufacturer + "' and model '" + model + "' IS EMPTY");
 
             } else {
@@ -77,7 +78,7 @@ public class Company {
                         keyCodes.add(currentCode);
                     } else {
                         if (keyCodes.get(i).equals(currentCode)) {
-                            keyCode.append(currentCode);
+                            keyCode.append("Repeated key: " + currentCode);
                             keyCode.append("\n");
                             infoLog.info("Repeated key: " + currentCode);
                         } else
@@ -88,7 +89,8 @@ public class Company {
             }
 
         }
-        return keyCodes.toString();
+
+        return keyCode.toString();
     }
 
 
@@ -100,7 +102,7 @@ public class Company {
      * @return
      */
     public String checkRepeatedJasonValues(String restCall, String manufacturer, String model) {
-        infoLog.info("Checking repetition of values in: " + restCall);
+        infoLog.info("Checking repetition of values in: " + restCall+" for manufacturer: "+manufacturer+" and model: "+model);
         List<String> valueCodes = new ArrayList<>();
         StringBuilder valueCode = new StringBuilder();
         String currentValue;
@@ -110,6 +112,7 @@ public class Company {
             if (currentValue.contentEquals("") || currentValue == null) {
                 valueCode.append("Manufacturer '" + manufacturer + "' and model '" + model + "'");
                 valueCode.append(entry.getKey().toString());
+                valueCode.append("\n");
                 errorLog.error("Manufacturer '" + manufacturer + "' and model '" + model + "' IS EMPTY");
             } else {
                 for (int i = 0; i < valueCodes.size() - 1; i++) {
@@ -118,7 +121,7 @@ public class Company {
                         valueCodes.add(currentValue);
                     } else {
                         if (valueCodes.get(i).equals(currentValue)) {
-                            valueCode.append(currentValue);
+                            valueCode.append("Manufacturer '" + manufacturer + "' and model '" + model + "Repeated key: " + currentValue);
                             valueCode.append("\n");
                             infoLog.info("Repeated key: " + currentValue);
                             errorLog.error("Manufacturer '" + manufacturer + "' and model '" + model + "Repeated key: " + currentValue);
@@ -129,7 +132,8 @@ public class Company {
                 }
             }
         }
-        return valueCodes.toString();
+
+        return valueCode.toString();
     }
 
     /**
